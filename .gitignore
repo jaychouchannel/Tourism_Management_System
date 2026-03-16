@@ -1,0 +1,7 @@
+.idea/
+*.iml
+
+target/
+
+src/main/resources/static/upload/
+src/main/resources/static/uploads/

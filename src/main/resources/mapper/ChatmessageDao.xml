@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChatmessageDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChatmessageEntity" id="chatmessageMap">
+        <result property="uid" column="uid"/>
+        <result property="fid" column="fid"/>
+        <result property="content" column="content"/>
+        <result property="format" column="format"/>
+        <result property="isread" column="isread"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChatmessageVO" >
+		SELECT * FROM chatmessage  chatmessage         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChatmessageVO" >
+		SELECT  chatmessage.* FROM chatmessage  chatmessage 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChatmessageView" >
+
+		SELECT  chatmessage.* FROM chatmessage  chatmessage 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChatmessageView" >
+		SELECT * FROM chatmessage  chatmessage <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>

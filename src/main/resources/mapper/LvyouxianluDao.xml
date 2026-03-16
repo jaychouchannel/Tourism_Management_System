@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LvyouxianluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LvyouxianluEntity" id="lvyouxianluMap">
+        <result property="xianlumingcheng" column="xianlumingcheng"/>
+        <result property="xianlutupian" column="xianlutupian"/>
+        <result property="jingdianmingcheng" column="jingdianmingcheng"/>
+        <result property="jingdianleixing" column="jingdianleixing"/>
+        <result property="jingdianweizhi" column="jingdianweizhi"/>
+        <result property="qidian" column="qidian"/>
+        <result property="tujingluduan" column="tujingluduan"/>
+        <result property="zhongdian" column="zhongdian"/>
+        <result property="xianlufeiyong" column="xianlufeiyong"/>
+        <result property="baotuanminge" column="baotuanminge"/>
+        <result property="chufariqi" column="chufariqi"/>
+        <result property="jiaotongfangshi" column="jiaotongfangshi"/>
+        <result property="xianluxiangqing" column="xianluxiangqing"/>
+        <result property="daoyougonghao" column="daoyougonghao"/>
+        <result property="daoyouxingming" column="daoyouxingming"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="gerenlvli" column="gerenlvli"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="discussnum" column="discussnum"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LvyouxianluVO" >
+		SELECT * FROM lvyouxianlu  lvyouxianlu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LvyouxianluVO" >
+		SELECT  lvyouxianlu.* FROM lvyouxianlu  lvyouxianlu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LvyouxianluView" >
+
+		SELECT  lvyouxianlu.* FROM lvyouxianlu  lvyouxianlu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LvyouxianluView" >
+		SELECT * FROM lvyouxianlu  lvyouxianlu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
