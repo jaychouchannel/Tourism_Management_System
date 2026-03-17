@@ -110,6 +110,12 @@
 			<div class="bottom-preview" :style='{"width":"100%","height":"auto"}'>
 				<div :style='{"minHeight":"120px","width":"100%","padding":"20px","overflow":"hidden","background":"#123","height":"auto"}'><div v-html="bottomContent"></div></div>
 			</div>
+
+			<!-- 求救悬浮按钮：固定在右下角，用户端所有页面可见 -->
+			<div class="float-sos-btn" @click="goQiujiu" title="紧急求救">
+				<span class="float-sos-btn__title">SOS</span>
+				<span class="float-sos-btn__label">求救</span>
+			</div>
 		</div>
 		
 	</div>
@@ -338,6 +344,15 @@ export default {
 		},
 		goMenu(path) {
             this.$router.push(path);
+		},
+		// 求救悬浮按钮：跳转到求救记录页，未登录则提示先登录
+		goQiujiu() {
+			if (this.Token) {
+				this.$router.push('/index/qiujiu');
+			} else {
+				this.$message({ message: '请先登录后再使用求救功能', type: 'warning' });
+				this.$router.push('/login');
+			}
 		},
     }
 }
@@ -702,4 +717,41 @@ export default {
 	.main-containers .btn-shop:hover {
 				opacity: 0.7;
 			}
+
+	/* 求救悬浮按钮样式 */
+	.float-sos-btn {
+		position: fixed;
+		bottom: 100px;
+		right: 30px;
+		width: 64px;
+		height: 64px;
+		background: #f56c6c;
+		border-radius: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 1010;
+		color: #fff;
+		font-weight: bold;
+		box-shadow: 0 4px 12px rgba(245, 108, 108, 0.5);
+		transition: opacity 0.2s, transform 0.2s;
+		user-select: none;
+	}
+
+	.float-sos-btn:hover {
+		opacity: 0.85;
+		transform: scale(1.08);
+	}
+
+	.float-sos-btn__title {
+		font-size: 18px;
+		line-height: 1.2;
+	}
+
+	.float-sos-btn__label {
+		font-size: 12px;
+		line-height: 1.2;
+	}
 </style>
