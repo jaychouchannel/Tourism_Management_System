@@ -773,6 +773,37 @@ INSERT INTO `newstype` VALUES (181,'2026-02-25 06:47:25','分类名称1'),(182,'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `qiujiu`
+--
+
+DROP TABLE IF EXISTS `qiujiu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qiujiu` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `addtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `daoyougonghao` varchar(200) DEFAULT NULL COMMENT '导游工号',
+  `daoyouxingming` varchar(200) DEFAULT NULL COMMENT '导游姓名',
+  `yonghuzhanghao` varchar(200) DEFAULT NULL COMMENT '用户账号',
+  `yonghuxingming` varchar(200) DEFAULT NULL COMMENT '用户姓名',
+  `qiujiuneirong` longtext COMMENT '求救内容',
+  `lianxifangshi` varchar(200) DEFAULT NULL COMMENT '联系方式',
+  `sfsh` varchar(200) DEFAULT '待处理' COMMENT '是否处理',
+  `huifuneirong` longtext COMMENT '回复内容',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='求救信息';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qiujiu`
+--
+
+LOCK TABLES `qiujiu` WRITE;
+/*!40000 ALTER TABLE `qiujiu` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qiujiu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `remenjingdian`
 --
 
