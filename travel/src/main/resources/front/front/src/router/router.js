@@ -45,6 +45,8 @@ import meishicantingAdd from '../pages/meishicanting/add'
 import cantingyuyueList from '../pages/cantingyuyue/list'
 import cantingyuyueDetail from '../pages/cantingyuyue/detail'
 import cantingyuyueAdd from '../pages/cantingyuyue/add'
+import qiujiuList from '../pages/qiujiu/list'
+import qiujiuAdd from '../pages/qiujiu/add'
 import xianluleixingList from '../pages/xianluleixing/list'
 import xianluleixingDetail from '../pages/xianluleixing/detail'
 import xianluleixingAdd from '../pages/xianluleixing/add'
@@ -260,6 +262,14 @@ export default new VueRouter({
 				{
 					path: 'cantingyuyueAdd',
 					component: cantingyuyueAdd
+				},
+				{
+					path: 'qiujiu',
+					component: qiujiuList
+				},
+				{
+					path: 'qiujiuAdd',
+					component: qiujiuAdd
 				},
 				{
 					path: 'xianluleixing',

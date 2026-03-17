@@ -42,6 +42,7 @@
 				<div class="btn" :style='{"padding":"10px 0","flexWrap":"wrap","display":"flex"}'>
 					<el-button :style='{"border":"1px solid #DF847F","cursor":"pointer","padding":"0 30px","margin":"0 10px 10px 0","outline":"none","color":"#DF847F","borderRadius":"0","background":"#fff","width":"auto","lineHeight":"40px","fontSize":"15px","height":"40px"}' v-if="btnAuth('daoyou','修改')" @click="editClick">修改</el-button>
 					<el-button :style='{"border":"1px solid #DF847F","cursor":"pointer","padding":"0 30px","margin":"0 10px 10px 0","outline":"none","color":"#DF847F","borderRadius":"0","background":"none","width":"auto","lineHeight":"40px","fontSize":"14px","height":"40px"}' v-if="btnAuth('daoyou','删除')" @click="delClick">删除</el-button>
+					<el-button :style='{"border":"0","cursor":"pointer","padding":"0 30px","margin":"0 10px 10px 0","outline":"none","color":"#fff","borderRadius":"0","background":"#DF847F","width":"auto","lineHeight":"40px","fontSize":"14px","height":"40px"}' v-if="btnAuth('daoyou','求救')" @click="onAcross('qiujiu','','','','')" type="warning">求救</el-button>
 					<!-- hasChat 无 -->
 				</div>
 			</div>
@@ -249,6 +250,14 @@
 			      }
 			    });
 			  }).catch(_ => {});
+		},
+		async onAcross(acrossTable,crossOptAudit,crossOptPay,statusColumnName,tips,statusColumnValue,type=1){
+			localStorage.setItem('crossTable',`daoyou`);
+			localStorage.setItem('crossObj', JSON.stringify(this.detail));
+			localStorage.setItem('statusColumnName',statusColumnName||'');
+			localStorage.setItem('statusColumnValue',statusColumnValue||'');
+			localStorage.setItem('tips',tips||'');
+			this.$router.push({path: '/index/' + acrossTable + 'Add', query: {type: 'cross'}});
 		},
     },
     components: {

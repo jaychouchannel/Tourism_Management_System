@@ -29,6 +29,7 @@ import center from '@/views/center'
     import lvyougonglve from '@/views/modules/lvyougonglve/list'
     import menpiaodingdan from '@/views/modules/menpiaodingdan/list'
     import cantingyuyue from '@/views/modules/cantingyuyue/list'
+    import qiujiu from '@/views/modules/qiujiu/list'
     import lvyouxianlu from '@/views/modules/lvyouxianlu/list'
     import baotuanxinxi from '@/views/modules/baotuanxinxi/list'
     import jiudianyuding from '@/views/modules/jiudianyuding/list'
@@ -153,6 +154,11 @@ export const routes = [{
 	path: '/cantingyuyue',
         name: '餐厅预约',
         component: cantingyuyue
+      }
+      ,{
+	path: '/qiujiu',
+        name: '求救信息',
+        component: qiujiu
       }
       ,{
 	path: '/lvyouxianlu',
